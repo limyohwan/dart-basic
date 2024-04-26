@@ -201,5 +201,92 @@ void main() {
   bool result5 = 12 < 10 || 0 > 1;
   print(result5);
 
-  
+  // List
+  List<String> blackPink = ['jenny', 'jisoo', 'rose', 'lisa'];
+  List<int> numbers = [1, 2, 3, 4, 5];
+
+  print(blackPink);
+  print(numbers);
+
+  // index
+  print(blackPink[0]);
+
+  // list function
+  print(blackPink.length);
+
+  blackPink.add('yohwan');
+  print(blackPink);
+
+  blackPink.remove('yohwan');
+  print(blackPink);
+
+  print(blackPink.indexOf('rose'));
+
+  // Map
+  Map<String, String> dictionary = {
+    'Harry' : '해리',
+    'Ron' : '론',
+    'Hermione' : '헤르미온느'
+  };
+  print(dictionary);
+
+  dictionary.addAll({
+    'Dumbledoor' : '덤블도어'
+  });
+  print(dictionary);
+
+  print(dictionary['Harry']);
+
+  dictionary['Boldmot'] = '볼드모트';
+  print(dictionary);
+
+  dictionary['Boldmot'] = '볼드모트2';
+  print(dictionary);
+
+  dictionary.remove('Boldmot');
+  print(dictionary);
+
+  print(dictionary.keys);
+  print(dictionary.values);
+
+  // Set
+  final Set<String> names = {
+    'yohwan',
+    'flutter',
+    'dart',
+    'flutter'
+  };
+
+  print(names);
+
+  names.add('jenny');
+
+  names.remove('yohwan');
+
+  print(names.contains('jenny'));
+
+  // condition
+  int number10 = 2;
+
+  if (number10 % 3 == 0) {
+    print('0');
+  } else if(number10 % 3 == 1) {
+    print('1');
+  } else {
+    print('2');
+  }
+
+  switch(number10 % 3) {
+    case 0:
+      print('0');
+      break;
+      
+    case 1:
+      print('1');
+      break;
+    
+    default:
+      print(2);
+      break;
+  }
 }
