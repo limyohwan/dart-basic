@@ -126,4 +126,80 @@ void main() {
 
   // print(now2);
 
+  int number6 = 2;
+
+  print(number6);
+  print(number6 + 2);
+  print(number6 - 2);
+  print(number6 * 2);
+  print(number6 / 2);
+  print('-------------------');
+  print(number6 % 2);
+  print(number6 % 3);
+  print(number6);
+  print('-------------------');
+  number6++;
+  print(number6);
+  number6--;
+  print(number6);
+
+  double double3 = 4.0;
+
+  print(double3);
+  double3 += 1;
+  print(double3);
+  double3 -= 1;
+  print(double3);
+  double3 *= 1;
+  print(double3);
+  double3 /= 1;
+  print(double3);
+  
+  double? double4 = 4.0;
+  print(double4);
+
+  double4 = 2.0;
+  print(double4);
+
+  double4 = null;
+  print(double4);
+
+  double4 ??= 3.0; // ??= 는 double4가 null이면 해당 값으로 변경해라라는 오퍼레이터
+  print(double4);
+
+  int number7 = 1;
+  int number8 = 2;
+
+  print(number7 > number8);
+  print(number7 < number8);
+  print(number7 >= number8);
+  print(number7 <= number8);
+  print(number7 == number8);
+  print(number7 != number8);
+
+  int number9 = 1;
+
+  print(number9 is int);
+  print(number9 is String);
+  print(number9 is! int);
+  print(number9 is! String);
+
+  // && - and 조건
+  // || - or 조건
+  bool result = 12 > 10 && 1 > 0;
+  print(result);
+
+  bool result2 = 12 > 10 && 0 > 1;
+  print(result2);
+
+  bool result3 = 12 > 10 || 1 > 0;
+  print(result3);
+
+  bool result4 = 12 > 10 || 0 > 1;
+  print(result4);
+
+  bool result5 = 12 < 10 || 0 > 1;
+  print(result5);
+
+  
 }
