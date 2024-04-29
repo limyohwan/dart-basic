@@ -327,4 +327,129 @@ void main() {
     total += 1;
   } while (total < 10);
   print(total);
+
+  Status status = Status.pending;
+  if (status == Status.approved) {
+    print('approved');
+  } else if (status == Status.pending) {
+    print('pending');
+  } else {
+    print('rejected');
+  }
+
+  addNumbers(10, 20, 30);
+
+  addNumbers(20);
+
+  int sum = addNumbers2(x: 10, y: 20, z: 50);
+  print(sum);
+
+  int sum2 = addNumbers2(x: 10, y: 20);
+  print(sum2);
+
+  int sum3 = addNumbers3(10, y: 20);
+  print(sum3);
+
+  Operation operation = add;
+  int op = operation(10, 20, 30);
+  print(op);
+
+  operation = subtract;
+  int op2 = operation(10, 20, 30);
+  print(op2);
+
+  int op3 = calculate(30, 40, 50, add);
+  print(op3);
+
+  int op4 = calculate(49, 50, 1, subtract);
+  print(op4);
+}
+
+enum Status {
+  approved,
+  pending,
+  rejeceted
+}
+
+// 세개의 숫자 x, y, z 를 더하고 짝수인지 홀수인지 알려주는 함수
+// positional parameter = 순서가 중요한 파라미터
+// optional parameter = 있어도 되고 없어도 되는 파라미터. [] 사이에 있는 파라미터, 기본값 설정
+// void 생략 가능
+void addNumbers(int x, [int y = 20, int z = 30]) {
+  print('addNumbers 실행');
+  int sum = x + y + z;
+
+  print('x : $x');
+  print('y : $y');
+  print('z : $z');
+
+  if (sum % 2 == 0) {
+    print('짝수');
+  } else {
+    print('홀수');
+  }
+}
+
+// named parameter = 이름이 있는 파라미터(순서가 중요하지 않음)
+// optional parameter = 있어도 되고 없어도 되는 파라미터. required를 지우면 default 값을 줄 수 있음
+int addNumbers2({
+  required int x, 
+  required int y,
+  int z = 30
+}) {
+  print('addNumbers 실행');
+  int sum = x + y + z;
+
+  print('x : $x');
+  print('y : $y');
+  print('z : $z');
+
+  if (sum % 2 == 0) {
+    print('짝수');
+  } else {
+    print('홀수');
+  }
+
+  return sum;
+}
+
+// 위 전부 혼합 사용
+int addNumbers3(int x, {
+  required int y,
+  int z = 30
+}) {
+  print('addNumbers 실행');
+  int sum = x + y + z;
+
+  print('x : $x');
+  print('y : $y');
+  print('z : $z');
+
+  if (sum % 2 == 0) {
+    print('짝수');
+  } else {
+    print('홀수');
+  }
+
+  return sum;
+}
+
+// arrow 함수
+int addNumbers4(int x, {
+  required int y,
+  int z = 30
+}) => x + y + z;
+
+// signature
+typedef Operation = int Function(int x, int y, int z); // 익명함수 느낌?
+
+// 더하기
+int add(int x, int y, int z) => x + y + z;
+
+// 빼기
+int subtract(int x, int y, int z) => x - y - z;
+
+// 계산
+int calculate(int x, int y, int z, Operation operation) {
+  return operation(x, y, z);
 }
