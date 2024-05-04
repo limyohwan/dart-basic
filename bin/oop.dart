@@ -92,13 +92,26 @@ class Idol {
     print('저희 멤버는 $members가 있습니다');
   }
 
-  //getter
+  // 함수는 로직이 들어가야하는 경우 사용
+  String getFirstMember() {
+    return this.members[0];
+  }
+
+  // getter는 간단한 경우 사용
   String get firstMember{
     return this.members[0];
   }
 
-  //setter 무조건 하나의 값만 파라미터로 받을 수 있음
+  //setter 무조건 하나의 값만 파라미터로 받을 수 있음, setter를 잘 사용하지 않음
   set firstMember(String name){
     this.members[0] = name;
+  }
+}
+
+class _Animal { // Private 속성 : _가 붙은 클래스, 변수, 함수는 같은 파일에서만 사용가능하고 다른 파일에서 사용하지 못함
+  String _name = 'lion';
+
+  void _sayHello() {
+    print('안녕하세요 $_name입니다.');
   }
 }
