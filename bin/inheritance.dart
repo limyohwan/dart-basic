@@ -15,6 +15,22 @@ void main() {
   redVelvet.sayName();
   redVelvet.sayMembersCount();
   redVelvet.sayFemale();
+
+  print('----------------- Type Comparison -----------------');
+  print(apink is Idol);
+  print(apink is BoyGroup);
+  print(apink is GirlGroup);
+
+  print('----------------- Type Comparison2 -----------------');
+  print(bts is Idol); // 부모클래스도 될 수 있고 자식 클래스도 될 수 있음
+  print(bts is BoyGroup);
+  print(bts is GirlGroup);
+
+  print('----------------- Type Comparison3 -----------------');
+  print(redVelvet is Idol);
+  print(redVelvet is BoyGroup);
+  print(redVelvet is GirlGroup);
+
 }
 
 class Idol {
