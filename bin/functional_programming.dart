@@ -147,6 +147,8 @@ void main() {
     .where((element) => element.group == 'bts')
     .fold<int>(0, (previousValue, element) => previousValue + element.name.length);
   print(result3);
+
+  // functional programming은 코드를 간결하게 하지만 너무 많이 하게되면 오히려 가독성이 떨어지게 됨
 }
 
 class Person {
