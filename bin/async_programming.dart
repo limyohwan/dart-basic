@@ -25,7 +25,7 @@ void main() async {
   // await addNumbers4(1, 1);
   // await addNumbers4(2, 2);
 
-  final reault1 = await addNumbers5(1, 1);
+  final reault1 = await addNumbers5(1, 1); // await 하지 않으면 정상 값이 리턴되지 않은 Future 객체가 리턴됨
   print(reault1);
 }
 
